@@ -1,17 +1,20 @@
 package affichage_simulation;
-import reseau_de_bus.Bus;
+import reseau_de_bus.CreateReseau;
 import reseau_de_bus.Reseau;
+import reseau_de_bus.ReseauAmiens;
+import reseau_de_bus.ReseauBuilder;
 
 public class Main {
 
 		public static void main(String[] args) {
-			Reseau reseau;
-			reseau = Reseau.getInstance();
-			//bus
-			Bus n1 = new Bus(1, "Long", "B01");
-			Bus n2 = new Bus(2, "court", "B02");
-			Bus n3 = new Bus(3, "Long", "B03");
-
+			CreateReseau cr = new CreateReseau();
+			ReseauBuilder reseauAmiens = new ReseauAmiens();
+			cr.setReseauBuilder(reseauAmiens);
+			cr.createReseau();
+			Reseau rs = cr.getReseau();
+			for(int i=0;i<rs.getListeLignes().size();i++) {
+				System.out.println(rs.getListeLignes().get(i).toString());
+			}
 	}
 
 }
