@@ -18,5 +18,58 @@ public class Arret {
 	}
 	public void operationArret() {
 	}
-
+	@Override
+	public String toString() {
+		return "Arret: id=" + id + ", nom=" + nom + ", latitude=" + latitude + ", longitude=" + longitude ;
+	}
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+	/**
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+	/**
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	/**
+	 * @return the latitude
+	 */
+	public int getLatitude() {
+		return latitude;
+	}
+	/**
+	 * @param latitude the latitude to set
+	 */
+	public void setLatitude(int latitude) {
+		this.latitude = latitude;
+	}
+	/**
+	 * @return the longitude
+	 */
+	public int getLongitude() {
+		return longitude;
+	}
+	/**
+	 * @param longitude the longitude to set
+	 */
+	public void setLongitude(int longitude) {
+		this.longitude = longitude;
+	}
+	
+	
 }

@@ -7,18 +7,25 @@ import java.util.Set;
 public class Ligne{
 	private int id;
 	protected String nom;
-	protected Set<Arret> listeArrets;
+	protected ArrayList<Arret> listeArrets;
 	protected ArrayList<Bus> listeBus;
 	
 	public Ligne() {
 		super();
 	}
 	
-	public Ligne(int id, String nom, Set<Arret> listeArrets, ArrayList<Bus> listeBus) {
+	public Ligne(int id, String nom, ArrayList<Arret> listeArrets, ArrayList<Bus> listeBus) {
 		this.id = id;
 		this.nom = nom;
 		this.listeArrets = listeArrets;
 		this.listeBus = listeBus;
+	}
+	
+	public Ligne(int id, String nom, ArrayList<Arret> listeArrets) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.listeArrets = listeArrets;
 	}
 
 	/**
@@ -48,13 +55,13 @@ public class Ligne{
 	/**
 	 * @return the listeArrets
 	 */
-	public Set<Arret> getListeArrets() {
+	public ArrayList<Arret> getListeArrets() {
 		return listeArrets;
 	}
 	/**
 	 * @param listeArrets the listeArrets to set
 	 */
-	public void setListeArrets(Set<Arret> listeArrets) {
+	public void setListeArrets(ArrayList<Arret> listeArrets) {
 		this.listeArrets = listeArrets;
 	}
 	/**
@@ -75,7 +82,7 @@ public class Ligne{
 
 	@Override
 	public String toString() {
-		return "Ligne [id=" + id + ", nom=" + nom + ", listeArrets=" + listeArrets + ", listeBus=" + listeBus + "]";
+		return "Ligne [id=" + id + ", nom=" + nom + ", listeArrets=" + listeArrets.toString() + ", listeBus=" + listeBus.toString() + "]";
 	}
 	
 }

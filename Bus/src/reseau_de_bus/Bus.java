@@ -39,4 +39,10 @@ public class Bus {
 	public void circuler() {
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Bus: id=" + id + ", modele=" + modele + ", immatriculation=" + immatriculation ;
+	}
+	
 }

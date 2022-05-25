@@ -14,7 +14,7 @@ public class ReseauAmiens extends ReseauBuilder {
 		
 		ArrayList<Ligne> listeLignes=new ArrayList<Ligne>();
 		
-		Set<Arret> listeArretsN3 = new HashSet<Arret>();
+		ArrayList<Arret> listeArretsN3 = new ArrayList<Arret>();
 		Arret a1=new Arret( 1, "Citadelle", 1, 1);
 		Arret a2=new Arret( 2, "Vogelle", 1, 1);
 		Arret a5=new Arret( 5, "Upjv St Leu", 1, 1);
@@ -31,7 +31,7 @@ public class ReseauAmiens extends ReseauBuilder {
 		listeBusN3.add(new Bus(2,"Mercedes", "MC002"));
 		listeBusN3.add(new Bus(3,"Mercedes", "MC003"));
 		
-		Set<Arret> listeArretsN2 = new HashSet<Arret>();
+		ArrayList<Arret> listeArretsN2 = new ArrayList<Arret>();
 		Arret a_n2_1=new Arret( 1, "Cirque jules vernes", 1, 1);
 		Arret a_n2_2=new Arret( 2, "Gare du Nord", 1, 1);
 		Arret a_n2_3=new Arret( 5, "Res Bailly", 1, 1);
