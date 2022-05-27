@@ -58,20 +58,54 @@ public class ReseauJG extends JFrame {
 		Ligne l1=new Ligne(1,"N1",listeArretsN3);
 		Ligne l2=new Ligne(2,"N2",listeArretsN2);
 		graph.getModel().beginUpdate();
-		for(int i=0; i<l1.getListeArrets().size();i=i+2) {
-			System.out.println(i);
-			try {
-			      Object v1 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i).getId(), 20+i*100, 20+i*50, 80, 30);
-			      Object v2;
-			      if(i==l1.getListeArrets().size()-1) {
-			    	   v2 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(0).getId(), 240+i*100, 150+i*50, 80, 30);
-			      }else {
-			    	   v2 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i+1).getId(), 140+i*100, 150+i*50, 80, 30);
-			      }
-			      graph.insertEdge(parent, null, "", v1, v2);
-			    } finally {
-			      graph.getModel().endUpdate();
-			    }
+		Object v1 = null,v2 = null,v3 = null,v4 = null,v5 = null;
+		for(int i=0; i<l1.getListeArrets().size();i++) {
+		  try {
+			switch(i){
+		       case 0: 
+		    	    v1 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i).getId(), 20+i*100, 100, 80, 30);
+		           break;
+		       case 1:
+		    	    v2 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i).getId(), 20+i*200, 20+i*30, 80, 30);
+		    	    graph.insertEdge(parent, null, "", v1, v2);
+		           break;
+		       case 2:
+		    	   v3 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i).getId(), 20+i*220, 20+i*50, 80, 30);
+		    	   graph.insertEdge(parent, null, "", v2, v3);
+		           break;
+		       case 3:
+		    	   v4 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i).getId(), 20+i*130, 20+i*80, 80, 30);
+		    	   graph.insertEdge(parent, null, "", v3, v4);
+		           break;
+		       case 4:
+		    	   v5 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i).getId(), 20+i*50, 20+i*50, 80, 30);
+		    		graph.insertEdge(parent, null, "", v4, v5);
+		    		graph.insertEdge(parent, null, "", v5, v1);
+		           break;
+		       default:
+		           System.out.println("Choix incorrect");
+		           break;
+		   }
+		  } finally {
+		      graph.getModel().endUpdate();
+		    }
+		}
+		  	
+		    mxGraphComponent graphComponent = new mxGraphComponent(graph);
+		    getContentPane().add(graphComponent);
+//			System.out.println(i);
+//			try {
+//			      Object v1 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i).getId(), 20+i*100, 20+i*50, 80, 30);
+//			      Object v2;
+//			      if(i==l1.getListeArrets().size()-1) {
+//			    	   v2 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(0).getId(), 240+i*100, 150+i*50, 80, 30);
+//			      }else {
+//			    	   v2 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i+1).getId(), 140+i*100, 150+i*50, 80, 30);
+//			      }
+//			      graph.insertEdge(parent, null, "", v1, v2);
+//			    } finally {
+//			      graph.getModel().endUpdate();
+//			    }
 			 
 //			StateContext stateContext = new StateContext(new Affectation(),b1,l1,l1.getListeArrets().get(i));
 //			stateContext.state();
@@ -90,12 +124,7 @@ public class ReseauJG extends JFrame {
 //			stateContext.setState(new ChargesPassagers(),b2,l2,l2.getListeArrets().get(i));
 //	        stateContext.state();
 		}
-	    
-	    
-	    mxGraphComponent graphComponent = new mxGraphComponent(graph);
-	    getContentPane().add(graphComponent);
-	  }
-	 
+	   
 	  /**
 	   * @param args
 	   */
