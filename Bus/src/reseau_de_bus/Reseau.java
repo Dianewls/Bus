@@ -7,7 +7,7 @@ import java.util.Set;
 public class Reseau extends Ligne {
 	protected ArrayList<Ligne> listeLignes;
 	protected ArrayList<Bus> listeBus;
-	protected Set<Arret> listeArrets;
+	protected ArrayList<Arret> listeArrets;
 	
 	private static Reseau instance;
 	
@@ -53,14 +53,14 @@ public class Reseau extends Ligne {
 	/**
 	 * @return the listeArrets
 	 */
-	public Set<Arret> getListeArrets() {
+	public ArrayList<Arret> getListeArrets() {
 		return listeArrets;
 	}
 
 	/**
 	 * @param listeArrets the listeArrets to set
 	 */
-	public void setListeArrets(Set<Arret> listeArrets) {
+	public void setListeArrets(ArrayList<Arret> listeArrets) {
 		this.listeArrets = listeArrets;
 	}
 	
