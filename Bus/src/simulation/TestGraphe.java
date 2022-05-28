@@ -174,9 +174,6 @@ public class TestGraphe extends JFrame{
         graph.insertEdge(parent, null, "", vN4, vN4_2, styleJaune);
         graph.insertEdge(parent, null, "", vN4_2, vN4_0, styleJaune);
         
-		
-		//graph.insertEdge(parent, null, "", v9, v10);
-		//graph.insertEdge(parent, null, "", v10, v6);
 		 
 		 graph.getModel().endUpdate();
 		    mxGraphComponent graphComponent = new mxGraphComponent(graph);
