@@ -72,6 +72,7 @@ public class TestGraphe extends JFrame{
 		graph.getModel().beginUpdate();
 		Object v1 = null,v2 = null,v3 = null,v4 = null,v5 = null, v0=null;
 		String styleEnfant1 = mxConstants.STYLE_FILLCOLOR + "=#00ff00";
+		String styleEnfant2 = mxConstants.STYLE_STROKECOLOR + "=#FF0000";
 		int x=0;
 		int y=0;
 		
@@ -85,14 +86,14 @@ public class TestGraphe extends JFrame{
 			    x=(-i*2+50)*5;
 			    v2 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(i).getId(), x*2, y+100, 80, 30, mxConstants.STYLE_SHAPE + "="+mxConstants.SHAPE_DOUBLE_ELLIPSE);
 			}
-			 graph.insertEdge(parent, null, "", v1, v2,mxConstants.STYLE_EDGE + "=" + mxConstants.STYLE_ROUNDED+"=3");
+			 graph.insertEdge(parent, null, "TEST", v1, v2,styleEnfant2);
 			    v1=v2;
 		}
 		int i=l1.getListeArrets().size()-1;
 		v2 = graph.insertVertex(parent, null, "Arret"+l1.getListeArrets().get(l1.getListeArrets().size()-1).getId(), x-i*5, y+i*10, 80, 30, mxConstants.STYLE_SHAPE + "="+mxConstants.SHAPE_DOUBLE_ELLIPSE);
 		//v10 = graph.insertVertex(parent, null, "Arret"+l2.getListeArrets().get(getListeArrets().size()-1).getId(), 100+i*120, 250, 80, 30,styleEnfant1);
-		graph.insertEdge(parent, null, "", v1, v2);
-		graph.insertEdge(parent, null, "", v2, v0);
+		graph.insertEdge(parent, null, "", v1, v2, mxConstants.STYLE_FILLCOLOR + "=#0000ff");
+		graph.insertEdge(parent, null, "", v2, v0,mxConstants.STYLE_FONTCOLOR + "=#0000ff");
 		//graph.insertEdge(parent, null, "", v9, v10);
 		//graph.insertEdge(parent, null, "", v10, v6);
 		 
