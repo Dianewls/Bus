@@ -17,6 +17,7 @@ public class StateContext {
         this.a=a;
     }
   
+    
     public void setState(BusState state,Bus b, Ligne l, Arret a) 
     {
         this.currentState = state;
