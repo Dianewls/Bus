@@ -35,7 +35,6 @@ public class Bus {
 		this.immatriculation = immatriculation;
 	}
 	
-	//un bus circule sur une 
 	public void circuler() {
 		
 	}

@@ -4,7 +4,7 @@ public abstract class ReseauBuilder {
 
 	protected Reseau reseau; 
 	public Reseau getReseau() {
-	return reseau;
+	    return reseau;
 	}
 	public void createNewReseau() {
 		reseau = Reseau.getInstance();
